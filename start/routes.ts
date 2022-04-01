@@ -18,7 +18,14 @@
 |
 */
 
+
 import Route from '@ioc:Adonis/Core/Route'
+
+// index.html
+Route.get('/', async ({ view }) => {
+        return view.render('index')
+    })  
+
 
 Route.group(() => {
   Route.post('/login', 'AuthController.login').as('auth.login')
