@@ -1,0 +1,195 @@
+paths:
+  /api/v1/venues/{venue_id}/fields:
+    get:
+      tags:
+        - Fields
+      security:
+        - bearerAuth: []
+      description: List semua field booking olahraga dari venue tertentu
+      parameters:
+        - in: path
+          name: venue_id # Note the name is the same as in the path
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+          description: The Venue ID
+        - name: name
+          description: Field name
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: type
+          description: Field type
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [soccer, minisoccer, futsal, basketball, volleyball]
+      # produces:
+      #   - application/json
+      responses:
+        200:
+          description: Success
+        401:
+          description: Unauthorized
+    post:
+      tags:
+        - Fields
+      security:
+        - bearerAuth: []
+      description: Mendaftarkan field baru
+      parameters:
+        - in: path
+          name: venue_id # Note the name is the same as in the path
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+          description: The Venue ID
+      requestBody:
+        description: Optional description in *Markdown*
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/definitions/Field'
+            example:
+              name: Field A
+              type: soccer
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/definitions/Field'
+      # produces:
+      #   - application/json
+      responses:
+        200:
+          description: Success
+        422:
+          description: Unprocessable Entity
+        403:
+          description: Forbidden
+        401:
+          description: Unauthorized
+
+  /api/v1/venues/{venue_id}/fields/{id}:
+    get:
+      tags:
+        - Fields
+      security:
+        - bearerAuth: []
+      description: List field booking olahraga dengan id tertentu
+      parameters:
+        - in: path
+          name: venue_id # Note the name is the same as in the path
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+          description: The Venue ID
+        - in: path
+          name: id # Note the name is the same as in the path
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+          description: The Field ID
+      # produces:
+      #   - application/json
+      responses:
+        200:
+          description: Success
+        404:
+          description: Not Found
+        401:
+          description: Unauthorized
+    put:
+      tags:
+        - Fields
+      security:
+        - bearerAuth: []
+      description: Mengubah data field
+      parameters:
+        - in: path
+          name: venue_id # Note the name is the same as in the path
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+          description: The Venue ID
+        - in: path
+          name: id # Note the name is the same as in the path
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+          description: The field ID
+      requestBody:
+        description: Optional description in *Markdown*
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                type:
+                  type: string
+                  enum: [soccer, minisoccer, futsal, basketball, volleyball]
+            example:
+              name: Field A Update
+              type: basketball
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                type:
+                  type: string
+                  enum: [soccer, minisoccer, futsal, basketball, volleyball]
+      # produces:
+      #   - application/json
+      responses:
+        200:
+          description: Success
+        422:
+          description: Unprocessable Entity
+        403:
+          description: Forbidden
+        401:
+          description: Unauthorized
+    delete:
+      tags:
+        - Fields
+      security:
+        - bearerAuth: []
+      description: Delete specific venue
+      parameters:
+        - in: path
+          name: venue_id # Note the name is the same as in the path
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+          description: The Venue ID
+        - in: path
+          name: id # Note the name is the same as in the path
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+          description: The Field ID
+      # produces:
+      #   - application/json
+      responses:
+        200:
+          description: Success
+        404:
+          description: Not Found
+        403:
+          description: Forbidden
+        401:
+          description: Unauthorized

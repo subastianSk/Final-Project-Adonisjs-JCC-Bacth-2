@@ -1,0 +1,16 @@
+definitions:
+  Venue:
+    type: object
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      address:
+        type: string
+      phone:
+        type: string
+    required:
+      - name
+      - address
+      - phone

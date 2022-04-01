@@ -1,0 +1,14 @@
+definitions:
+  Field:
+    type: object
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      type:
+        type: string
+        enum: [soccer, minisoccer, futsal, basketball, volleyball]
+    required:
+      - name
+      - type

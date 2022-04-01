@@ -1,0 +1,38 @@
+{
+  "name": "main-bareng",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "npm run compile && node ace build --prod",
+    "start": "node ace serve --watch",
+    "start:prod": "node ./build/server.js",
+    "postbuild": "cp -a docs/ build/docs"
+  },
+  "engines": {
+    "node": "v16.13.0"
+  },
+  "devDependencies": {
+    "@adonisjs/assembler": "^5.4.2",
+    "adonis-preset-ts": "^2.1.0",
+    "pino-pretty": "^7.6.0",
+    "typescript": "^4.6.3",
+    "youch": "^3.1.1",
+    "youch-terminal": "^2.1.3"
+  },
+  "dependencies": {
+    "@adonisjs/auth": "^8.0.12",
+    "@adonisjs/core": "^5.6.2",
+    "@adonisjs/lucid": "^17.1.1",
+    "@adonisjs/mail": "^7.2.5",
+    "@adonisjs/repl": "^3.1.9",
+    "@adonisjs/view": "^6.1.2",
+    "adonis5-swagger": "^1.4.0",
+    "luxon": "^2.3.1",
+    "mysql": "^2.18.1",
+    "pg": "^8.7.3",
+    "phc-bcrypt": "^1.0.7",
+    "proxy-addr": "^2.0.7",
+    "reflect-metadata": "^0.1.13",
+    "source-map-support": "^0.5.21"
+  }
+}

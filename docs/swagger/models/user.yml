@@ -1,0 +1,21 @@
+definitions:
+  User:
+    type: object
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      email:
+        type: string
+        uniqueItems: true
+      password:
+        type: string
+      role:
+        type: string
+        enum: [user, owner]
+    required:
+      - name
+      - email
+      - password
+      - role

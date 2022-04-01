@@ -1,0 +1,22 @@
+definitions:
+  Booking:
+    type: object
+    properties:
+      id:
+        type: integer
+      field_id:
+        type: integer
+      play_date_start:
+        type: string
+        format: date-time
+      play_date_end:
+        type: string
+        format: date-time
+        uniqueItems: true
+      total_players:
+        type: integer
+    required:
+      - field_id
+      - play_date_start
+      - play_date_end
+      - total_players

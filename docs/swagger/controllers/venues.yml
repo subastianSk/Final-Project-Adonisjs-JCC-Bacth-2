@@ -1,0 +1,204 @@
+paths:
+  /api/v1/venues:
+    get:
+      tags:
+        - Venues
+      security:
+        - bearerAuth: []
+      description: List semua venue/tempat booking olahraga
+      parameters:
+        - name: name
+          description: Venue name
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: phone
+          description: Venue phone
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: address
+          description: Venue address
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: type
+          description: Field type
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [soccer, minisoccer, futsal, basketball, volleyball]
+      # produces:
+      #   - application/json
+      responses:
+        200:
+          description: Success
+    post:
+      tags:
+        - Venues
+      security:
+        - bearerAuth: []
+      description: Mendaftarkan venue baru
+      requestBody:
+        description: Optional description in *Markdown*
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/definitions/Venue'
+            example:
+              name: Venue A
+              address: Jl. Jcc Bandung
+              phone: '021555888'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/definitions/Venue'
+      # produces:
+      #   - application/json
+      responses:
+        200:
+          description: Success
+        422:
+          description: Unprocessable Entity
+        403:
+          description: Forbidden
+
+  /api/v1/venues/{id}:
+    get:
+      tags:
+        - Venues
+      security:
+        - bearerAuth: []
+      description: List semua venue/tempat booking olahraga
+      parameters:
+        - in: path
+          name: id # Note the name is the same as in the path
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+          description: The Venue ID
+        - name: date
+          description: Jadwal booking
+          in: query
+          required: false
+          schema:
+            type: string
+            format: yyyy-mm-dd
+            default: '2021-09-25'
+      # produces:
+      #   - application/json
+      responses:
+        200:
+          description: Success
+        404:
+          description: Not Found
+    put:
+      tags:
+        - Venues
+      security:
+        - bearerAuth: []
+      description: Mengubah data venue
+      parameters:
+        - in: path
+          name: id # Note the name is the same as in the path
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+          description: The Venue ID
+      requestBody:
+        description: Optional description in *Markdown*
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                address:
+                  type: string
+                phone:
+                  type: string
+            example:
+              name: Venue A Update
+              address: Jl. Jcc Bandung Update
+              phone: '021555888'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/definitions/Venue'
+      # produces:
+      #   - application/json
+      responses:
+        200:
+          description: Success
+        422:
+          description: Unprocessable Entity
+        403:
+          description: Forbidden
+    delete:
+      tags:
+        - Venues
+      security:
+        - bearerAuth: []
+      description: Delete specific venue
+      parameters:
+        - in: path
+          name: id # Note the name is the same as in the path
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+          description: The Venue ID
+      # produces:
+      #   - application/json
+      responses:
+        200:
+          description: Success
+        404:
+          description: Not Found
+
+  /api/v1/venues/{id}/bookings:
+    post:
+      tags:
+        - Bookings
+      security:
+        - bearerAuth: []
+      description: Membuat jadwal booking di venue untuk tanggal tertentu
+      parameters:
+        - in: path
+          name: id # Note the name is the same as in the path
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+          description: The Venue ID
+      requestBody:
+        description: Optional description in *Markdown*
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/definitions/Booking'
+            example:
+              field_id: 1
+              play_date_start: '2021-09-27 18:00:00'
+              play_date_end: '2021-09-27 19:00:00'
+              total_players: 8
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/definitions/Booking'
+      # produces:
+      #   - application/json
+      responses:
+        200:
+          description: Success
+        422:
+          description: Unprocessable Entity
+        403:
+          description: Forbidden
