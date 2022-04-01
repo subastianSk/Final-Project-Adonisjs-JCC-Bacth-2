@@ -10,7 +10,7 @@ export default {
 
   options: {
     definition: {
-      openapi: '1.0.0',
+      openapi: '1.3.3',
       info: {
         title: 'Main Bareng - Documentations',
         version: '1.0.0',
