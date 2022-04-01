@@ -1,9 +1,13 @@
 # Final-Project-Adonisjs-JCC-Bacth-1
-Kelas : Nodejs Backend Dev With Adonis - Jabar Coding Camp
-Batch : 2
-Teknis Pengerjaan: Individu
-Deadline: Minggu, 3 April 2022 23.59 WIB
-Nama : Dwi Yanto Subastian 
+Kelas : Nodejs Backend Dev With Adonis 
+
+Batch : 2 
+
+Nama : Dwi Yanto Subastian
+
+Teknis Pengerjaan: Individu 
+
+Deadline: Minggu, 3 April 2022 23.59 WIB 
 
 # Restful API Main Bareng 
 ## Overview
