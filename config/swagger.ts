@@ -12,7 +12,7 @@ export default {
     definition: {
       openapi: '1.0.0',
       info: {
-        title: 'Main Bareng - Documentations',
+        title: 'Final Project JCC BActh 2 - Documentations',
         version: '1.3.3',
         description: 'My application with swagger docs',
       },
