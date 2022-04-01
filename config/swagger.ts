@@ -10,10 +10,10 @@ export default {
 
   options: {
     definition: {
-      openapi: '1.3.3',
+      openapi: '1.0.0',
       info: {
         title: 'Main Bareng - Documentations',
-        version: '1.0.0',
+        version: '1.3.3',
         description: 'My application with swagger docs',
       },
       components: {
