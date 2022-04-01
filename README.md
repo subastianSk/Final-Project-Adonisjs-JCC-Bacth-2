@@ -60,6 +60,6 @@ Booking adalah jadwal penyewaan atau jadwal main user di field/venue tertentu.
 ## Contoh ERD
 ![image](https://user-images.githubusercontent.com/79132450/134943686-b698c68f-9f46-43bc-9f67-f93e281460bf.png)
 
-## Referensi (contoh) Dokumentasi API
-Contoh Dokumentasi API Main Bersama bisa dilihat di : link berikut https://sanbercode-mobile.gitbook.io/mobile-app-development/challenges/intensive/api-main-bersama
+## Link Dokumentasi API
+link berikut https://project-adonisjs-jcc-bacth-2.herokuapp.com/
 
