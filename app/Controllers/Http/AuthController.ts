@@ -27,7 +27,6 @@ export default class AuthController {
   }
   public async register({ request, response }: HttpContextContract) {
     // validate
-    const data = await request.validate(RegisterUserValidator)
     const { name, email, password, role } = await request.validate(
       RegisterUserValidator
     )
@@ -37,7 +36,7 @@ export default class AuthController {
     await Mail.send((message) => {
       message
         .from('adonis.demo@sanberdev.com')
-        .to(data.email)
+        .to(email)
         .subject('Verification Email')
         .htmlView('emails/otp_confirmation', { otp_code })
     })

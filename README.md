@@ -9,6 +9,17 @@ Teknis Pengerjaan: Individu
 
 Deadline: Minggu, 3 April 2022 23.59 WIB 
 
+email: subastian.sk@gmail.com
+
+
+# User and Owner
+
+## owner
+- akunml0702@gmail.com pw:subastian02 
+
+## user
+
+
 # Restful API Main Bareng 
 ## Overview
 Aplikasi Main Bareng untuk mempertemukan pemuda-pemuda yang ingin berolahraga tim (futsal/voli/basket/minisoccer/soccer) dan booking tempat bersama.
