@@ -35,7 +35,7 @@ export default class AuthController {
     const otp_code = Math.floor(100000 + Math.random() * 900000)
     await Mail.send((message) => {
       message
-        .from('main.bareng@sanberdev.com')
+        .from('adonis.demo@sanberdev.com')
         .to(email)
         .subject('Verification Email')
         .htmlView('emails/otp_confirmation', { otp_code })
