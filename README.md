@@ -15,10 +15,10 @@ email: subastian.sk@gmail.com
 # User and Owner
 
 ## owner
-- akunml0702@gmail.com pw:subastian02 
+- mtribuiani@jagomail.com pw:owner1234
 
 ## user
-
+- kasana3@bedul.net pw:api1234
 
 # Restful API Main Bareng 
 ## Overview
